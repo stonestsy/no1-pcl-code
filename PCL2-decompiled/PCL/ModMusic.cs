@@ -386,7 +386,9 @@ public sealed class ModMusic
                 if (Settings.Get<int>("UiMusicVolume") != num)
                 {
                     num = Settings.Get<int>("UiMusicVolume");
+#pragma warning disable CS0612 // NAudio 1.7.3 中 Volume 已标记 Obsolete，暂无替代 API
                     val.Volume = (float)((double)num / 1000.0);
+#pragma warning restore CS0612
                 }
                 obj._0024VB_0024Local_Percent = val2.CurrentTime.TotalMilliseconds / val2.TotalTime.TotalMilliseconds;
                 ModBase.RunInUi(obj._Lambda_0024__0);

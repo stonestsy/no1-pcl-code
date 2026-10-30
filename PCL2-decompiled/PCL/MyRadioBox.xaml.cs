@@ -44,8 +44,6 @@ public partial class MyRadioBox : Grid, IMyRadio, ISettingControl, IComponentCon
 
     private bool MouseDowned;
 
-    private bool AllowMouseDown;
-
     private const int AnimationTimeOfMouseIn = 100;
 
     private const int AnimationTimeOfMouseOut = 200;
@@ -194,7 +192,6 @@ public partial class MyRadioBox : Grid, IMyRadio, ISettingControl, IComponentCon
         };
         Uuid = ModBase.GetUuid();
         MouseDowned = false;
-        AllowMouseDown = true;
         InitializeComponent();
         _InitWithEvents();
     }

@@ -44,8 +44,6 @@ public partial class MyLoading : Grid, IComponentConnector
 
     private bool ErrorAnimationWaiting;
 
-    private bool IsMouseDown;
-
     [CompilerGenerated]
     [AccessedThroughProperty("PanBack")]
     private MyLoading _PanBack;
@@ -360,7 +358,6 @@ public partial class MyLoading : Grid, IComponentConnector
         HasAnimation = true;
         IsLooping = false;
         ErrorAnimationWaiting = false;
-        IsMouseDown = false;
         InitializeComponent();
         _InitWithEvents();
         SetResourceReference(ForegroundProperty, "ColorBrush3");
@@ -487,12 +484,10 @@ public partial class MyLoading : Grid, IComponentConnector
 
     private void Button_MouseDown(object sender, MouseButtonEventArgs e)
     {
-        IsMouseDown = true;
     }
 
     private void Button_MouseLeave(object sender, object e)
     {
-        IsMouseDown = false;
     }
 
     private bool _withEventsInitialized;

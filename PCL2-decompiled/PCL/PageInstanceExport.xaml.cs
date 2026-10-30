@@ -30,7 +30,7 @@ public partial class PageInstanceExport : MyPageRight, IRefreshable, IComponentC
 {
     [Serializable]
     [CompilerGenerated]
-    internal new sealed class _Closure_0024__
+    internal sealed class _Closure_0024__
     {
         public static readonly _Closure_0024__ _0024I;
 

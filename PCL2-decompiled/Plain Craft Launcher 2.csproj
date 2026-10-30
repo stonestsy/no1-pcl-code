@@ -11,6 +11,8 @@
     <LangVersion>14.0</LangVersion>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <!-- 反编译产物固有、无法在不改变行为的前提下消除的警告 -->
+    <NoWarn>$(NoWarn);CS0649;CS0162;CS0659;CS0661;CS0067</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>app.ico</ApplicationIcon>

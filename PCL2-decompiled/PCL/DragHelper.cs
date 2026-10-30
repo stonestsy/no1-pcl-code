@@ -139,7 +139,6 @@ public class DragHelper
         uint[] array = new uint[3] { 563u, 73u, 74u };
         foreach (uint msg in array)
         {
-            bool flag3 = false;
             if ((!flag2) ? (!ChangeWindowMessageFilter(msg, 1u)) : (!ChangeWindowMessageFilterEx(handle, msg, 1u, ref pChangeFilterStruct)))
             {
                 throw new Win32Exception(Marshal.GetLastWin32Error());
