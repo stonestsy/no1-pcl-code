@@ -1,0 +1,1 @@
+public delegate void VB_0024AnonymousDelegate_6<TArg0, TArg1>(TArg0 arg0, TArg1 arg1);

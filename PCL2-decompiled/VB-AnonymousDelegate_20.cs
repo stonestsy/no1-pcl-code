@@ -1,0 +1,1 @@
+public delegate TResult VB_0024AnonymousDelegate_20<TArg0, TResult>(TArg0 arg0);

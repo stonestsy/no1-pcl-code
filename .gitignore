@@ -1,0 +1,13 @@
+# 构建输出
+/PCL2-decompiled/bin/
+/PCL2-decompiled/obj/
+
+# 原始待分析二进制与调试符号
+*.exe
+*.pdb
+
+# 运行时数据
+/PCL/
+/.minecraft/
+*.user
+.vs/
