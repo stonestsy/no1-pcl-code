@@ -1789,7 +1789,7 @@ public sealed class ModDownloadLib
             }
             else
             {
-                list2.Add("http://jenkins.liteloader.com/job/LiteLoaderInstaller%20" + DownloadInfo.Inherit + "/lastSuccessfulBuild/artifact/" + ((Operators.CompareString(DownloadInfo.Inherit, "1.8", TextCompare: false) == 0) ? "ant/dist/" : "build/libs/") + DownloadInfo.FileName);
+                list2.Add("https://jenkins.liteloader.com/job/LiteLoaderInstaller%20" + DownloadInfo.Inherit + "/lastSuccessfulBuild/artifact/" + ((Operators.CompareString(DownloadInfo.Inherit, "1.8", TextCompare: false) == 0) ? "ant/dist/" : "build/libs/") + DownloadInfo.FileName);
             }
             list.Add(new ModNet.LoaderDownload("下载主文件", new List<ModNet.NetFile>
             {
