@@ -263,7 +263,7 @@ public class Settings
         new Setting("ToolDownloadVersion", 1, Sources.Registry),
         new Setting("ToolDownloadTranslate", 0, Sources.Registry),
         new Setting("ToolDownloadTranslateV2", 1, Sources.Registry),
-        new Setting("ToolDownloadCert", false, Sources.Registry, Encrypted: false, (object a0) =>
+        new Setting("ToolDownloadCert", true, Sources.Registry, Encrypted: false, (object a0) =>
         {
             ModNet.ShouldValidateSslCertificateOnLogin(Conversions.ToBoolean(a0));
         }),

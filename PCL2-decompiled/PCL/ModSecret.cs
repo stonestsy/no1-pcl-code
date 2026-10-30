@@ -186,9 +186,27 @@ internal sealed class ModSecret
         {
             Req.Headers.Referrer = new Uri($"http://{408}.pcl2.server/");
         }
-        if (Url.Contains("api.curseforge.com") || Url.Contains("forgecdn.net"))
+        if (IsCurseForgeHost(Url))
         {
             Req.Headers.Add("x-api-key", Encoding.Default.GetString(Convert.FromBase64String("JDJhJDEwJDdXV1YxV0VMY3dYOFhwN2Q2OE1Icy41Z3JUeVpWYTZTeW55ZVN5TWgxcnNFODluSWEwOXpP")));
+        }
+    }
+
+    /// <summary>
+    /// 仅当 URL 的主机名确为 CurseForge/ForgeCDN 时才附加 API Key，避免按子串匹配把密钥发给第三方。
+    /// </summary>
+    private static bool IsCurseForgeHost(string Url)
+    {
+        try
+        {
+            string host = new Uri(Url).Host;
+            return host.Equals("api.curseforge.com", StringComparison.OrdinalIgnoreCase)
+                || host.Equals("forgecdn.net", StringComparison.OrdinalIgnoreCase)
+                || host.EndsWith(".forgecdn.net", StringComparison.OrdinalIgnoreCase);
+        }
+        catch (UriFormatException)
+        {
+            return false;
         }
     }
 

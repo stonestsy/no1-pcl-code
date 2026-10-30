@@ -301,6 +301,11 @@ public partial class PageLaunchRight : MyPageRight, IRefreshable, IDispatcherUnh
                 }
                 break;
         }
+        if (!string.IsNullOrWhiteSpace(text) && !text.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+        {
+            Logger.Warn($"主页地址未启用 HTTPS，已拒绝加载：{text}", (LogBehavior)1, "E:\\Projects\\PCL\\本体代码\\Plain Craft Launcher 2\\Pages\\PageLaunch\\PageLaunchRight.xaml.vb");
+            text = null;
+        }
         if (!string.IsNullOrWhiteSpace(text))
         {
             if (Operators.CompareString(text, Settings.Get<string>("CacheSavedPageUrl"), TextCompare: false) != 0 || !FileUtils.Exists(ModBase.PathTemp + "Cache\\Custom.xaml"))
